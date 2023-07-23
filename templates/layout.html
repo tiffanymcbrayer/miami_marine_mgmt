@@ -1,0 +1,88 @@
+<html>
+
+<head>
+
+  <!-- Required meta tags
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">-->
+  <!-- Jquery -->
+  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- <script type="text/javascript" src="{{ url_for('static', filename = 'main.js') }}"></script> -->
+    
+  <!-- CSS -->
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/main.css">
+
+  
+  <!-- <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}"> -->
+</head>
+
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
+<!-- <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
+
+
+<title>Tile___</title>
+
+<body>
+  <main>
+  <nav class="navbar navbar-expand-lg navbar-light">
+
+    <a class="navbar-brand" href="/">MIAMI MARINE MGMT</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/services">Services</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/about_us">About Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+        
+       
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: rgb(237, 141, 179); border-color:rgb(237, 141, 179);">Search</button>
+
+      </form>
+    </div>
+  </nav>
+
+
+  <div class='container'>
+    {% block content %}
+    {% endblock %}
+  </div>
+  </main>
+
+  <footer>
+    <div class="container">
+        <!-- <p>Contact us at: contactmiamimarine@gmail.com</p>  -->
+        <!-- GET ICONS OF MAIL AND PHONE  -->
+        <p>contactmiamimarine@gmail.com</p> 
+        <p>(786) 332-6817</p>
+        <!-- <p>&copy; 2023 My Company. All rights reserved.</p> -->
+    </div>
+</footer>
+
+  
+</body>
+
+</html>
