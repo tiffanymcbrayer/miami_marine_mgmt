@@ -26,7 +26,6 @@ $(document).ready(function(){
 
     serviceDiv.classList.add("service-item");
     servicesContainer.appendChild(serviceDiv);
-    console.log(service);
   });
 });
 
