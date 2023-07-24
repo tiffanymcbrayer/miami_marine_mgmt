@@ -1,8 +1,13 @@
 {% extends "layout.html" %}
-
 {% block content %}
 
-<script src="static/services.js"></script>
+<title>Services - Miami Marine Management</title>
+
+<script>
+  let services = '{{ services| tojson}}'
+  let service_dic = '{{ service_dic| tojson}}'
+</script>
+<script type="module" src="static/services.js"></script>
 
 <div class="page">
     <div class="row">
@@ -12,12 +17,18 @@
         <h1>Services Provided</h1>
 
         
-        <div id="servicesContainer">
+        <div id="servicesContainer"> 
           <!-- Services will be dynamically added here -->
         </div>
       </div>
     </div>
-  </div>
+
+    <div class="row">
+      <div class="col-md-12" id="partners-container">
+        <h2>Partners</h2>
+      </div>
+    </div>
+</div>
   
 
 {% endblock %}
