@@ -2,8 +2,13 @@
 
 {% block content %}
 
+<title>Contact - Miami Marine Management</title>
+
+
 <script>
+    let services = '{{ services| tojson}}'
 </script>
+<script type="module" src="static/contact.js"></script>
 
 <div class="page">
     <div class="row">
@@ -31,50 +36,60 @@
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-4">
+                        <br>
+                        <br>
+                        
                         <p><b>Email</b></p>
                         <p>contactmiamimarine@gmail.com</p>
                         <hr class="custom-hr">
 
                         <p><b>Phone</b></p>
                         <p>(786) 332-6817</p>
+
+                        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d114964.54549424641!2d-80.3118595!3d25.7823843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9b0a20ec8c111%3A0xff96f271ddad4f65!2sMiami%2C%20FL!5e0!3m2!1sen!2sus!4v1690220789421!5m2!1sen!2sus" width="350" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
                     </div>
 
-                    <div class="col-md-2"></div>
-                    <div class="col-md-4">
-                        Name
-                        <div>
-                            <input id="name" class="form-control">
-                        </div>
-                        <br>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <form>
+                            Name
+                            <div>
+                                <input id="name" class="form-control">
+                            </div>
+                            <br>
 
-                        Email
-                        <div>
-                            <input type = "email" id="email"  class="form-control">
-                        </div>
-                        <br>
+                            Email
+                            <div>
+                                <input type = "email" id="email"  class="form-control">
+                            </div>
+                            <br>
 
-                        Phone number
-                        <div>
-                            <input type = "number" id="phone" class="form-control">
-                        </div>
-                        <br>
+                            Phone number
+                            <div>
+                                <input type = "number" id="phone" class="form-control">
+                            </div>
+                            <br>
 
-                        Service type
-                        <div>
-                            <select id="serviceType" class="form-control">
-                                <option>clean</option>
-                                <option>other</option>
-                            </select>
-                            
-                        </div>
-                        <br>
+                            Service type
+                            <div>
+                                <select id="serviceType" class="form-control">
+                                    <!-- Options will be added dynamically through JavaScript -->
+                                </select>
+                                
+                            </div>
+                            <br>
 
-                        Message
-                        <div>
-                            <input type="text" id="message" class="form-control message-input">
-                        </div>
-                        <br>
-                        
+                            Message
+                            <div>
+                                <textarea  type="text" id="message" rows="5" class="form-control message-input"></textarea>
+                            </div>
+                            <br>
+
+                            <div>
+                                <button type="button" id="contactButton" class="btn btn-primary">Submit</button>
+                            </div>
+
+                        </form>
                     </div>
 
                 </div>
