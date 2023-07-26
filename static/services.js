@@ -1,11 +1,13 @@
 $(document).ready(function(){
-  // Parse services to make array
+  // Parse to make correct data types 
   let serviceList = JSON.parse(services);
   let serviceDictionary = JSON.parse(service_dic);
+  let partnerDictionary = JSON.parse(partners);
   
-  const servicesContainer = document.getElementById("servicesContainer");
+  generateCarousel(partnerDictionary);
 
-  
+  // Create service container to then add service items to
+  const servicesContainer = document.getElementById("servicesContainer");
   serviceList.forEach(service => {
     const serviceDiv = document.createElement("div");
     serviceDiv.textContent = service;
@@ -22,6 +24,7 @@ $(document).ready(function(){
  
 
   // Add click event listener to the services container
+  // If the div of a service is clicked -> than a detailed view will expand below
   servicesContainer.addEventListener("click", function(event) {
     if (event.target.classList.contains("service-item")) {
       toggleServiceDetails(event.target, serviceDictionary);
@@ -29,6 +32,8 @@ $(document).ready(function(){
   });
 });
 
+
+// Function to toggle the service detailed div 
 function toggleServiceDetails(serviceDiv, serviceDictionary) {
   const serviceDetailsDiv = serviceDiv.nextElementSibling;
   const iconElement = document.createElement("i");
@@ -57,6 +62,7 @@ function toggleServiceDetails(serviceDiv, serviceDictionary) {
   serviceDiv.appendChild(iconElement);
 }
 
+// Function to create the service detail view html code that is added in the toggleServiceDetails function
 function generateServiceDetailsHTML(serviceDetails) {
   const [details, price, imageSrc] = serviceDetails;
 
@@ -83,7 +89,129 @@ function generateServiceDetailsHTML(serviceDetails) {
 
   return newServiceDetailsDiv;
 }
+
+
+function generateCarousel(partnerDictionary) {
+  const carouselContainer = document.getElementById("carouselContainer");
+  const partnerKeys = Object.keys(partnerDictionary);
+
+  const partnersPerCarouselItem = 3;
+  const numCarouselItems = Math.ceil(partnerKeys.length / partnersPerCarouselItem);
+
+  const carouselInner = document.createElement("div");
+  carouselInner.classList.add("carousel-inner");
+
+  for (let i = 0; i < numCarouselItems; i++) {
+    const carouselItem = document.createElement("div");
+    carouselItem.classList.add("carousel-item");
+    if (i === 0) {
+      carouselItem.classList.add("active");
+    }
+
+    const indexes = partnerKeys.slice(i * partnersPerCarouselItem, (i + 1) * partnersPerCarouselItem);
+   
+    const partnerRow = makeCard(partnerDictionary, indexes);
+    carouselItem.appendChild(partnerRow);
+
+    carouselInner.appendChild(carouselItem);
+  }
+  carouselContainer.appendChild(carouselInner);
+}
+
+function makeCard(partnerDictionary, indexes) {
+  const partnerRow = document.createElement("div");
+  partnerRow.classList.add("row", "mb-4");
+
+  for (const index of indexes) {
+    const partnerData = partnerDictionary[index];
+    console.log("partnerData:", partnerData);
+
+    const partnerColumn = document.createElement("div");
+    partnerColumn.classList.add("col-md-4"); // Each partner will take 4 columns
+
+    const partnerCard = document.createElement("div");
+    partnerCard.classList.add("partner-card");
+
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("partner-img-container");
+
+    const imageElement = document.createElement("img");
+    imageElement.src = partnerData[1]; // Set the image URL from partnerData at the given index
+    imageElement.alt = partnerData[0];
+    imageElement.classList.add("partner-card-img-top");
+
+
+    const partnerWebsiteLink = document.createElement("a"); // Create the anchor tag for the partner's website
+    partnerWebsiteLink.href = partnerData[2]; // Set the website URL from partnerData at the given index
+    partnerWebsiteLink.target = "_blank"; // Open link in a new tab
+    partnerWebsiteLink.appendChild(imageElement); // Add the image inside the anchor tag
+
+    imageContainer.appendChild(partnerWebsiteLink); // Add the anchor tag inside the container
+    partnerCard.appendChild(imageContainer); // Add container inside the card
+
+
+
+
+    // imageContainer.appendChild(imageElement);
+    // partnerCard.appendChild(imageContainer);
+
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    const cardTitle = document.createElement("div");
+    cardTitle.classList.add("card-title");
+    cardTitle.textContent = partnerData[0];
+
+    cardBody.appendChild(cardTitle);
+    partnerCard.appendChild(cardBody);
+
+    partnerColumn.appendChild(partnerCard);
+    partnerRow.appendChild(partnerColumn);
+  }
+
+  return partnerRow;
+}
+
+
+
   
 
+// Function if i want to go back to grid!!
+function generateGrid(partnerDictionary) {
+  const partnersGrid = document.getElementById("partnersGrid");
+  const partnerKeys = Object.keys(partnerDictionary);
 
+  for (let i = 0; i < partnerKeys.length; i++) {
+    const partnerKey = partnerKeys[i];
+    const partnerData = partnerDictionary[partnerKey];
 
+    const partnerColumn = document.createElement("div");
+    partnerColumn.classList.add("col-md-4", "mb-4");
+
+    const partnerCard = document.createElement("div");
+    partnerCard.classList.add("partner-card"); // Changed class name
+
+    const imageContainer = document.createElement("div");
+    imageContainer.classList.add("partner-img-container"); // Added new container for circular cropping
+
+    const imageElement = document.createElement("img");
+    imageElement.src = partnerData[1]; // Set the image URL
+    imageElement.alt = partnerData[0];
+    imageElement.classList.add("partner-card-img-top"); // Changed class name
+
+    imageContainer.appendChild(imageElement); // Add image inside the container
+    partnerCard.appendChild(imageContainer); // Add container inside the card
+
+    const cardBody = document.createElement("div");
+    cardBody.classList.add("card-body");
+
+    const cardTitle = document.createElement("div");
+    cardTitle.classList.add("card-title");
+    cardTitle.textContent = partnerData[0];
+
+    cardBody.appendChild(cardTitle);
+    partnerCard.appendChild(cardBody);
+    partnerColumn.appendChild(partnerCard);
+    partnersGrid.appendChild(partnerColumn);
+  }
+}
