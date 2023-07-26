@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask, render_template, jsonify
 
 
@@ -55,14 +57,27 @@ service_dic = {
 }
 
 # there might be two service partners
+# partners = {
+#     "Yard": ["Glass-Tech"],
+#     "Safety": ["D-Dey"],
+#     "Decking": ["All Water Customs"],
+#     "Broker": [],
+#     "Security": [],
+#     "Service": [],
+#     "Fuel":[]
+# }
+
+# Name of the company : [what type of partner, "image url", "company url"]
 partners = {
-    "Yard": ["Glass-Tech"],
-    "Safety": ["D-Dey"],
-    "Decking": ["All Water Customs"],
-    "Broker": [],
-    "Security": [],
-    "Service": [],
-    "Fuel":[]
+    "Glass-Tech": ["Yard", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/LOGO.png?raw=true", "https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjgiMjkwKqAAxWil4kEHb8cAeEQPAgJ"],
+    "D-Dey": ["Safety", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/LOGO.png?raw=true", "https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjgiMjkwKqAAxWil4kEHb8cAeEQPAgJ"],
+    "All Water Customs": ["Decking", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/LOGO.png?raw=true","https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjgiMjkwKqAAxWil4kEHb8cAeEQPAgJ"],
+    "Miami Maritime Group": ["Broker", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/LOGO.png?raw=true", "https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjgiMjkwKqAAxWil4kEHb8cAeEQPAgJ"],
+    "Locmarine ": ["Security", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/LOGO.png?raw=true", "https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjgiMjkwKqAAxWil4kEHb8cAeEQPAgJ"],
+    "VooDoo Marine": ["Service", "https://scontent-lga3-2.cdninstagram.com/v/t51.2885-19/26228258_1418779181560853_4220528378819641344_n.jpg?stp=dst-jpg_s320x320&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=105&_nc_ohc=ya-zqwspi00AX_GP8R8&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBg3rDrXVAUFUdWcVjBWSqG8i7o6UF-4HYEWtuRYhMSvg&oe=64C2CEF9&_nc_sid=8b3546", "https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjgiMjkwKqAAxWil4kEHb8cAeEQPAgJ"],
+    "Elite Marine": ["Service", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/LOGO.png?raw=true", "https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjgiMjkwKqAAxWil4kEHb8cAeEQPAgJ"],
+    "DC Fuel Services ": ["Fuel", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/LOGO.png?raw=true", "https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjgiMjkwKqAAxWil4kEHb8cAeEQPAgJ"]
+
 }
 
 
@@ -74,7 +89,7 @@ def home():
 def services():
 
 
-    return render_template('services.html', services=services_list, service_dic=service_dic)
+    return render_template('services.html', services=services_list, service_dic=service_dic, partners=partners)
 
 @app.route('/about_us')
 def about_us():
@@ -84,5 +99,7 @@ def about_us():
 def contact():
     return render_template('contact.html', services=services_list)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+# if __name__ == '__main__':
+#     app.run(debug=True)

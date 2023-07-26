@@ -3,15 +3,20 @@
     --black: rgb(38, 38, 38); 
     --pink:  rgb(237, 141, 179);
     --blue: rgb(136, 194, 199);
+    --font: 'Jost', sans-serif;
+    /* --font: 'Helvetica', sans-serif; */
 }
   
 .page {
     margin-top: 50;
     margin-bottom: 100px;
+    font-family: var(--font);
 }
 body {
     background-color: var(--black);
+    background-color: black;
     background-image: linear-gradient(var(--black), rgb(113,113,113));
+    /* background-image: linear-gradient(var(--black),var(--pink)); */
 }
 
 h1 {
@@ -24,6 +29,7 @@ a {
     color: var(--blue);     
 }
 h1, h2, p {
+    font-family: var(--font);
     color: var(--blue);
 }
 
@@ -38,7 +44,7 @@ h1, h2, p {
 
 .contact-page {
     color: var(--blue);
-    font-family: Arial, sans-serif;
+    font-family: var(--font);
     
 }
 #contact-subheader {
@@ -60,9 +66,19 @@ h1, h2, p {
 
 #servicesContainer {
     color: var(--blue);
-    font-family: Arial, sans-serif;
+    font-family: var(--font);
     /* outline: 1.5px solid; */
     margin-top: 15px;
+
+
+    /* making border stuff  */
+  
+    /* background: black;
+    border: 2px solid #000;
+    border-radius: 10px; 
+    padding: 5px 5px 10px 5px;
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);  */
+    
 }
 .service-wrapper {
     position: relative;
@@ -73,7 +89,7 @@ h1, h2, p {
     border-bottom: 1px solid #ccc;
   }
 .service-item {
-    font-size: 18px;
+    font-size: 20px;
     border-bottom: .5px solid;
     padding: 8px 10px 8px 5px; /* top, right, bottom, left */
     display: flex;
@@ -103,7 +119,54 @@ h1, h2, p {
 
 #partners-container{
     margin-top: 40px;
+    margin-bottom: 20px;
 }
+
+.partner-card {
+    /* Customize partner card styles */
+    color: var(--blue);
+    font-family: var(--font);
+    text-align: center;
+    font-size: 14px;
+}
+  
+.partner-img-container {
+    width: 150; 
+    height: 150; 
+    overflow: hidden;
+    border-radius: 50%; /* Crop the image in a circle */
+    margin: 0 auto; /* Center the circular cropped image */
+    font-size: 10px;
+}
+  
+.partner-card-img-top {
+    width: 100%; /* Adjust the image size within the circular cropping container */
+    height: 100%; /* Adjust the image size within the circular cropping container */
+    object-fit: cover; /* Maintain aspect ratio and crop to fit circular container */
+}
+  
+  /* Optional: Add styles to the card body or other elements */
+.card-body {
+    /* Customize card body styles */
+    color: var(--blue);
+    font-family: var(--font);
+    text-align: center;
+    font-size: 16px;
+    padding: 5px 0px 8px 0px; /* top, right, bottom, left */
+}
+
+
+
+.carousel-control-prev {
+    float: right; /* Float the carousel control to the right */
+  }
+
+
+
+
+
+
+
 
 .message-input {
     height: 80px; /* Adjust the height as needed */
@@ -116,16 +179,24 @@ h1, h2, p {
 
 /* NAVBAR*/
 .navbar {
-    background-color: transparent;
+    /* background-color: transparent; */
+
+    padding: 30px 100px 0px 150px; /* top, right, bottom, left */
+
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--black);  */
 }
 .navbar .navbar-brand {
     color: var(--pink);
-    font-family: Arial, sans-serif;
+    font-family: var(--font);
 }
 
 .navbar .navbar-nav .nav-link {
     color: var(--pink);
-    font-family: Arial, sans-serif;
+    font-family: var(--font);
 }
 
 .btn-outline-success,
@@ -177,9 +248,33 @@ body {
 footer {
     margin-top: auto;
     text-align: center;
+    font-family: var(--font);
 }
 li a {
     white-space: nowrap;
     text-align: center;
 }
 
+
+
+/* home options */
+#welcome-to{
+    text-align: center;
+    color: var(--blue);
+    font-size: 65px;
+    font-family: var(--font);
+}
+#maimi-marine-management{
+    text-align: left;
+    color: var(--pink);
+    font-size:65px;
+    font-family: var(--font);
+}
+#front-blurb {
+    padding: 0 25px 0 25px; /* top right bottom left */
+
+    text-align: justify;
+    color: var(--blue);
+    font-size: 20px;
+    font-family: var(--font);
+}
