@@ -1,23 +1,78 @@
 {% extends "layout.html" %}
-
 {% block content %}
 
-<script src="static/services.js"></script>
+<title>Services - Miami Marine Management</title>
+
+<script>
+  let services = '{{ services| tojson}}'
+  let service_dic = '{{ service_dic| tojson}}'
+  let partners = '{{partners | tojson}}'
+</script>
+<script type="module" src="static/services.js"></script>
+ <!-- Add this inside the <head> section -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js"></script>
 
 <div class="page">
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8">
         
-        <h1>Services Provided</h1>
+        <h1>services</h1>
 
         
-        <div id="servicesContainer">
+        <div id="servicesContainer"> 
           <!-- Services will be dynamically added here -->
         </div>
       </div>
     </div>
-  </div>
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div id="partners-container">
+          <h2>partners</h2>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-2"></div>
+
+      <!-- Prev button  -->
+      <div class="col-md-1">
+        <a class="carousel-control-prev" href="#carouselContainer" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </div>
+
+      <!-- Partners -->
+      <div class="col-md-6">
+        <div id="carouselContainer" class="carousel slide" data-ride="carousel">
+          <!-- Generated in javascript -->
+        </div>
+      </div>
+
+      <!-- Next button -->
+    <div class="col-md-1">
+      <a class="carousel-control-next" href="#carouselContainer" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <!-- 3 column grid to show the partners  -->
+        <!-- <div class="row" id="partnersGrid"></div> -->
+      
+    </div>
+</div>
   
 
 {% endblock %}
