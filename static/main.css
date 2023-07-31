@@ -177,34 +177,20 @@ h1, h2, p {
     justify-content: center;
 }
 
-/* NAVBAR*/
+/* NAVBAR for screens with a minimum width of 992px */
 @media (min-width: 992px) {
     .navbar {
-      /* Add your styles specific to the collapsed navbar here */
-      /* For example, you can change the font size, color, etc. */
-      padding: 30px 100px 0px 150px;
+        color: var(--pink);
+        padding: 30px 100px 0px 150px;
     }
 }
-.navbar {
-    /* background-color: transparent; */
 
-    /* padding: 30px 100px 0px 150px; top, right, bottom, left */
-
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--black);  */
-}
-.navbar .navbar-brand {
-    color: var(--pink);
-    font-family: var(--font);
-}
-
+.navbar .navbar-brand,
 .navbar .navbar-nav .nav-link {
     color: var(--pink);
     font-family: var(--font);
 }
+
 
 
 .btn-outline-success,
@@ -285,4 +271,10 @@ li a {
     color: var(--blue);
     font-size: 20px;
     font-family: var(--font);
+}
+
+.contact-info{
+    font-family: var(--font);
+    padding-left:25px;
+    font-size:25px;
 }
