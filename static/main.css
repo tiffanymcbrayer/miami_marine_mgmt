@@ -177,27 +177,20 @@ h1, h2, p {
     justify-content: center;
 }
 
-/* NAVBAR*/
-.navbar {
-    /* background-color: transparent; */
-
-    padding: 30px 100px 0px 150px; /* top, right, bottom, left */
-
-    /* position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--black);  */
-}
-.navbar .navbar-brand {
-    color: var(--pink);
-    font-family: var(--font);
+/* NAVBAR for screens with a minimum width of 992px */
+@media (min-width: 992px) {
+    .navbar {
+        color: var(--pink);
+        padding: 30px 100px 0px 150px;
+    }
 }
 
+.navbar .navbar-brand,
 .navbar .navbar-nav .nav-link {
     color: var(--pink);
     font-family: var(--font);
 }
+
 
 .btn-outline-success,
 .btn-outline-success:focus,
