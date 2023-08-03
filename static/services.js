@@ -75,9 +75,9 @@ function generateServiceDetailsHTML(serviceDetails) {
   newServiceDetailsDiv.appendChild(detailsParagraph);
 
   // Create a paragraph for price
-  const priceParagraph = document.createElement("p");
-  priceParagraph.textContent = `Price: $${price}`;
-  newServiceDetailsDiv.appendChild(priceParagraph);
+  // const priceParagraph = document.createElement("p");
+  // priceParagraph.textContent = `Price: $${price}`;
+  // newServiceDetailsDiv.appendChild(priceParagraph);
 
   // // Create an image element for the small image
   // const imageElement = document.createElement("img");
@@ -172,6 +172,23 @@ function makeCard(partnerDictionary, indexes) {
   return partnerRow;
 }
 
+
+function sendEmail() {
+  Email.send({
+    Host: "tiffanymcbrayer.gmail.com",
+    Username: "ttm2126@columbia.edu",
+
+    Password: "lUckym7???",
+
+    To: 'receiver@email_address.com',
+    From: "sender@email_address.com",
+    Subject: "Sending Email using javascript",
+    Body: "Well that was easy!!",
+  })
+    .then(function (message) {
+      alert("mail sent successfully")
+    });
+}
 
 
   
