@@ -14,8 +14,7 @@
 }
 body {
     background-color: var(--black);
-    background-color: black;
-    background-image: linear-gradient(var(--black), rgb(113,113,113));
+    /* background-image: linear-gradient(var(--black), rgb(113,113,113)); */
     /* background-image: linear-gradient(var(--black),var(--pink)); */
 }
 
@@ -40,6 +39,8 @@ h1, h2, p {
 #logo-home img {
     width: 300px; /* Set the desired width of the image */
     height: auto; /* Let the height adjust proportionally to maintain aspect ratio */
+    
+    /* border-radius: 50%;  */
 }
 
 .contact-page {
@@ -63,12 +64,13 @@ h1, h2, p {
     border-width: 1px; /* Optional: Set the border width, default is 1px */
 }
 
-
+/* SERVICES PAGE */
 #servicesContainer {
     color: var(--blue);
     font-family: var(--font);
     /* outline: 1.5px solid; */
     margin-top: 15px;
+    margin-bottom: 15px;
 
 
     /* making border stuff  */
@@ -89,7 +91,7 @@ h1, h2, p {
     border-bottom: 1px solid #ccc;
   }
 .service-item {
-    font-size: 20px;
+    font-size: 22px;
     border-bottom: .5px solid;
     padding: 8px 10px 8px 5px; /* top, right, bottom, left */
     display: flex;
@@ -98,7 +100,7 @@ h1, h2, p {
     /* background-color: var(--black); */
 }
 .service-details{
-    font-size: 14px;
+    font-size: 16px;
     /* outline: .5px solid; */
     padding: 5px 20px 5px 20px;
     /* background-color: var(--black); */
@@ -119,7 +121,7 @@ h1, h2, p {
 
 #partners-container{
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .partner-card {
@@ -159,8 +161,64 @@ h1, h2, p {
 
 .carousel-control-prev {
     float: right; /* Float the carousel control to the right */
-  }
+}
 
+#containerBig{
+
+    /* border-top: 1px solid var(--blue); */
+    /* border-bottom: 1px solid var(--blue); */
+    padding: 30px 0px 30px 0px;
+}
+
+
+
+
+
+/* ABOUT US */
+#about-us-blurb{
+    padding-bottom: 20px;
+    text-align: justify;
+    color: var(--blue);
+    font-size: 16px;
+    font-family: var(--font);
+}
+#persons-larger-container{
+    padding-top: 10px;
+    padding-bottom: 90px; 
+}
+.person-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px 10px 20px 10px;
+    margin-top: 15px;
+    margin-bottom: 0px;    
+}
+.person-image{
+    /* max-width: 90%; */
+    display: block;
+    padding: 10px 10px 5px 5px;
+}
+.person-name{
+    padding: 5px 10px 0px 10px;
+    color: var(--black);
+    font-family: var(--font);
+    font-size: 20px;
+}
+.person-title{
+    padding: 0px 10px 0px 10px;
+    color: grey;
+    font-family: var(--font);
+    font-size: 16px;
+}
+.person-info{
+    padding: 0px 10px 0px 10px;
+    color: grey;
+    font-family: var(--font);
+    font-size: 14px;
+}
+.person-instagram{
+    padding: 10px 10px 5px 10px;
+}
 
 
 
@@ -172,24 +230,47 @@ h1, h2, p {
     height: 80px; /* Adjust the height as needed */
 }
 
-#instagram-page{
-    display: flex;
-    justify-content: center;
-}
+
+
 
 /* NAVBAR for screens with a minimum width of 992px */
 @media (min-width: 992px) {
     .navbar {
         color: var(--pink);
+        /* position: fixed; */
         padding: 30px 100px 0px 150px;
+        
     }
 }
-
 .navbar .navbar-brand,
 .navbar .navbar-nav .nav-link {
     color: var(--pink);
     font-family: var(--font);
 }
+/* Ref: https://markoskon.com/fixed-navbar-on-top-with-position-sticky/ */
+/* default state */
+.navbar {
+    position: relative;
+    color: var(--black);
+    transition: all 0.3s ease-out;
+}
+  
+/* scrolling state */
+.navbar.fixed-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* scrolling colors */
+    background-color: var(--black);
+    color: var(--pink);
+}  
+.navbar.fixed-top a {
+    color: var(--pink);
+}
+
+
+
+
 
 
 .btn-outline-success,

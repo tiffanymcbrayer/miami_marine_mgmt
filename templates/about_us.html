@@ -4,44 +4,83 @@
 
 <title>About Us - Miami Marine Management</title>
 
+
+<script>
+    let people = '{{ people| tojson}}'
+</script>
 <script async src="//www.instagram.com/embed.js"></script>
 
 
 <div class="page">
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <h1>about us</h1>
-          <!-- <p>Welcome to Miami Marine Management! We are a leading marine services company based in Miami, Florida.</p>
-          <p>At Miami Marine Management, we take pride in providing top-notch services to our customers in the boating and marine industry. With years of experience and a dedicated team, we are committed to delivering exceptional results and ensuring the satisfaction of our clients.</p>
-          <p>Our team of skilled professionals is equipped with the knowledge and expertise to handle various marine-related tasks, including boat cleaning and detailing, gel-coat restoration, interior cleaning, teak restoration, bottom painting, and engine maintenance. Whether you are a boat owner or manage a marine business, we've got you covered!</p>
-          <p>We value our customers' trust and aim to build long-lasting relationships through reliable and high-quality services. Customer satisfaction is our top priority, and we strive to exceed expectations with every project we undertake.</p>
-          <p>If you have any questions or would like to learn more about our services, feel free to get in touch with us. We are here to assist you and provide the best marine solutions tailored to your needs.</p>
-          <p>Thank you for choosing Miami Marine Management. We look forward to serving you!</p>
-         -->
-            <p>Welcome to Miami Marine Management! As a leading marine services company in Miami, Florida, we take pride in delivering top-notch solutions to the boating and marine industry. </p>
-            <p>With years of experience and a dedicated team, customer satisfaction is our top priority. Contact us to learn more about our reliable and high-quality services. Thank you for choosing Miami Marine Management!</p>
-        
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h1>about us</h1>
+            <div id="about-us-blurb">
+                Welcome to Miami Marine Management! As a leading marine services company in Miami, Florida, we take pride in delivering top-notch solutions to the boating and marine industry.
+                <p></p>
+                With years of experience and a dedicated team, customer satisfaction is our top priority. Contact us to learn more about our reliable and high-quality services. Thank you for choosing Miami Marine Management!
+            </div>
+            
         </div>
     </div>
-    <br>
-    <br>
+    
+    
+
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-10">
+            <div class="row" id="persons-larger-container">
+                {% for person_name, person_data in people.items() %}
+                <div class="col-md-3">
+                    <div class="person-container">
+                        <div class="person-image">
+                            <img src="{{ person_data.photo }}" style="max-width: 100%; display: block;">
+                        </div>
+                        <div class="person-name">
+                            {{ person_name }}
+                            <a href=" {{ person_data.instagram }}" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                           
+                        </div>
+                        <div class="person-title">
+                            {{ person_data.title }}
+                        </div>
+                        <div class="person-info">
+                            {{ person_data.info }}
+                        </div>
+                        <!-- <div class="person-instagram">
+                            <a href=" {{ person_data.instagram }}" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div> -->
+                        
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+       
+    </div>
+
+    
+    
+
 
 
   
-    <div class="row">
-      <div class="col-md-2"></div>
-      <div class="col-md-8">
-        
 
-        
-        <div id="instagram-page">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/miamimarinemgmt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
-            <!-- Instagram embed content will be dynamically added here -->
+    <!-- INSTAGRAM -->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-8">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/miamimarinemgmt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:15px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
             </blockquote>
         </div>
-      </div>
     </div>
+    
 </div>
 
 {% endblock %}
