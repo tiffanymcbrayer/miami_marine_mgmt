@@ -1,10 +1,7 @@
-$(document).ready(function(){
-
-
-    // Parse services to make array
+$(document).ready(function() {
+    // Parse services to make an array
     let serviceList = JSON.parse(services);
-    serviceList.unshift(""); // empty string for first option to be blank on drop down
-
+    serviceList.unshift(""); // empty string for the first option to be blank on the dropdown
 
     const serviceTypeSelect = document.getElementById("serviceType");
 
@@ -20,7 +17,6 @@ $(document).ready(function(){
     const serviceTypeInput = document.getElementById("serviceType");
     const messageInput = document.getElementById("message");
 
-
     const contactButton = document.getElementById("contactButton");
     contactButton.addEventListener("click", function() {
         // Access the values entered by the user
@@ -30,23 +26,111 @@ $(document).ready(function(){
         const serviceType = serviceTypeInput.value;
         const message = messageInput.value;
 
-        // Do something with the data, e.g., send it to the server or perform validation
-        console.log("Name:", name);
-        console.log("Email:", email);
-        console.log("Phone:", phone);
-        console.log("Service Type:", serviceType);
-        console.log("Message:", message);
+        // Clear any existing error messages
+        clearErrorMessages();
 
-        // Clear the input fields (optional)
-        nameInput.value = "";
-        emailInput.value = "";
-        phoneInput.value = "";
-        serviceTypeInput.value = "";
-        messageInput.value = "";
+        // Validation checks
+        let hasErrors = false;
+
+        if (!name) {
+            setError('name', 'Please enter your name.');
+            hasErrors = true;
+        }
+
+        if (!email && !phone) {
+            setError('email', 'Please enter either your email or phone number.');
+            setError('phone', 'Please enter either your email or phone number.');
+            hasErrors = true;
+        } else {
+            if (email && !email.includes('@')) {
+                setError('email', 'Please enter a valid email address.');
+                hasErrors = true;
+            }
+
+            if (phone && (!/^\d*$/.test(phone) || phone.length < 10)) {
+                console.log("HERE");
+                setError('phone', 'Please enter a valid phone number.');
+                hasErrors = true;
+            }
+        }
+
+        if (hasErrors) {
+            return;
+        }
+
+        // Prepare the data to send to the server
+        const formData = {
+            name: name,
+            email: email,
+            phone: phone,
+            serviceType: serviceType,
+            message: message
+        };
+
+        // Make an HTTP POST request to the server
+        fetch('/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Handle the response from the server (if needed)
+            console.log('Server response:', data);
+            // Display a success message (optional)
+            showSuccessMessage();
+            // Clear the input fields (optional)
+            clearInputFields();
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error:', error);
+            // Optionally, you can display an error message to the user here
+        });
     });
 
+    function setError(inputId, errorMessage) {
+        const input = document.getElementById(inputId);
+        input.classList.add('error');
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.textContent = errorMessage;
+        input.parentNode.appendChild(errorDiv);
+    }
+
+    function clearErrorMessages() {
+        const errorMessages = document.getElementsByClassName('error-message');
+        while (errorMessages.length > 0) {
+            errorMessages[0].parentNode.removeChild(errorMessages[0]);
+        }
+        const inputs = document.querySelectorAll('.error');
+        inputs.forEach(input => input.classList.remove('error'));
+    }
+
+    function showSuccessMessage() {
+        // Optionally, you can create a success message div and display it on the page
+        // For example:
+        //alert('You have sent a request form!');
+        swal("Request Sent!", "Thanks for reaching out! We will get back to you shortly.", "success");
+        // const successDiv = document.createElement('div');
+        // successDiv.className = 'success-message';
+        // successDiv.textContent = 'You have sent a request form!';
+        // document.getElementById('form-container').appendChild(successDiv);
+    }
+
+    function clearInputFields() {
+        // Clear the input fields
+        nameInput.value = '';
+        emailInput.value = '';
+        phoneInput.value = '';
+        serviceTypeInput.value = '';
+        messageInput.value = '';
+    }
 });
-
-
-
-
