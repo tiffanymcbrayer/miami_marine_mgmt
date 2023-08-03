@@ -15,16 +15,6 @@ from googleapiclient.errors import HttpError
 
 
 app = Flask(__name__)
-app.config['MAIL_SERVER']='sandbox.smtp.mailtrap.io'
-app.config['MAIL_PORT'] = 2525
-app.config['MAIL_USERNAME'] = '4bb4e1cbc7a755'
-app.config['MAIL_PASSWORD'] = '049838c3983c60'
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
-
-
-mail = Mail(app)
-
 
 
 services_list = ["Boat Cleaning & Detailing",
