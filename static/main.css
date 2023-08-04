@@ -240,7 +240,9 @@ h1, h2, p {
 .person-instagram{
     padding: 10px 10px 5px 10px;
 }
-
+.instagram-icon {
+    font-size: 24px; /* Change this value to adjust the size */
+}
 
 
 
@@ -305,8 +307,8 @@ h1, h2, p {
   }
   
 
-.fab {
-    font-size: 36px; /* Adjust the font size as desired */
+.layout-icons{
+    font-size: 36px;
 }
 
 
