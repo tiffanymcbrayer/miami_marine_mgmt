@@ -1,8 +1,6 @@
-from __future__ import print_function
 import os
 
 from flask import Flask, request, render_template, jsonify, send_from_directory, url_for
-from flask_mail import Mail, Message
 
 
 import base64
