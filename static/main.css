@@ -16,6 +16,7 @@
 }
 body {
     background-color: var(--black);
+    /* background-color:rgb(42,40,41); */
     /* background-image: linear-gradient(var(--black), rgb(113,113,113)); */
     /* background-image: linear-gradient(var(--black),var(--pink)); */
 }
@@ -253,47 +254,56 @@ h1, h2, p {
 
 
 
-/* NAVBAR for screens with a minimum width of 992px */
-@media (min-width: 992px) {
-    .navbar {
-        color: var(--pink);
-        /* position: fixed; */
-        padding: 10px 150px 0px 150px;
-        
-    }
-}
-.navbar-brand{
-    font-size: 30px;
-}
-.navbar .navbar-brand,
-.navbar .navbar-nav .nav-link {
-    color: var(--pink);
-    font-family: var(--font);
-    
-}
-/* Ref: https://markoskon.com/fixed-navbar-on-top-with-position-sticky/ */
-/* default state */
 .navbar {
     position: relative;
     color: var(--black);
     transition: all 0.3s ease-out;
     font-size: 25px;
-    /* background-color: rgb(50,50,50); */
-}
-  
-/* scrolling state */
-.navbar.fixed-top {
+  }
+
+  /* scrolling state */
+  .navbar.fixed-top {
     position: fixed;
     top: 0;
     width: 100%;
-    /* scrolling colors */
     background-color: var(--black);
-    background-color:rgb(50, 50, 50); 
     color: var(--pink);
-}  
-.navbar.fixed-top a {
+  }
+
+  .navbar.fixed-top a {
     color: var(--pink);
-}
+  }
+
+  .navbar-brand {
+    font-size: 30px;
+  }
+
+  .navbar .navbar-brand,
+  .navbar .navbar-nav .nav-link {
+    color: var(--pink);
+    font-family: var(--font);
+  }
+ 
+
+
+  /* Media query for devices with a minimum width of 992px (large screens) */
+  @media (min-width: 992px) {
+    .navbar {
+      color: var(--pink);
+      padding: 10px 150px 0px 150px; /* Regular padding for larger screens */
+    }
+  }
+
+  /* Reset padding for devices with a maximum width of 767px (small devices) */
+  @media (max-width: 767px) {
+    .navbar:not(.fixed-top) {
+      padding-left: 20px; /* No padding for smaller devices */
+    }
+    .navbar-brand {
+      font-size: 25px; /* Adjust the font size for smaller devices */
+    }
+  }
+  
 
 .fab {
     font-size: 36px; /* Adjust the font size as desired */
