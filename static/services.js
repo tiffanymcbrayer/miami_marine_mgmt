@@ -5,6 +5,7 @@ $(document).ready(function(){
   let partnerDictionary = JSON.parse(partners);
   
   generateCarousel(partnerDictionary);
+  generateGrid(partnerDictionary)
 
   // Create service container to then add service items to
   const servicesContainer = document.getElementById("servicesContainer");
@@ -171,29 +172,48 @@ function makeCard(partnerDictionary, indexes) {
 
   return partnerRow;
 }
-
-
-function sendEmail() {
-  Email.send({
-    Host: "tiffanymcbrayer.gmail.com",
-    Username: "ttm2126@columbia.edu",
-
-    Password: "lUckym7???",
-
-    To: 'receiver@email_address.com',
-    From: "sender@email_address.com",
-    Subject: "Sending Email using javascript",
-    Body: "Well that was easy!!",
-  })
-    .then(function (message) {
-      alert("mail sent successfully")
-    });
-}
-
-
   
 
 // Function if i want to go back to grid!!
+// function generateGrid(partnerDictionary) {
+//   const partnersGrid = document.getElementById("partnersGrid");
+//   const partnerKeys = Object.keys(partnerDictionary);
+
+//   for (let i = 0; i < partnerKeys.length; i++) {
+//     const partnerKey = partnerKeys[i];
+//     const partnerData = partnerDictionary[partnerKey];
+
+//     const partnerColumn = document.createElement("div");
+//     partnerColumn.classList.add("col-md-4", "mb-4");
+
+//     const partnerCard = document.createElement("div");
+//     partnerCard.classList.add("partner-card"); // Changed class name
+
+//     const imageContainer = document.createElement("div");
+//     imageContainer.classList.add("partner-img-container"); // Added new container for circular cropping
+
+//     const imageElement = document.createElement("img");
+//     imageElement.src = partnerData[1]; // Set the image URL
+//     imageElement.alt = partnerData[0];
+//     imageElement.classList.add("partner-card-img-top"); // Changed class name
+
+//     imageContainer.appendChild(imageElement); // Add image inside the container
+//     partnerCard.appendChild(imageContainer); // Add container inside the card
+
+//     const cardBody = document.createElement("div");
+//     cardBody.classList.add("card-body");
+
+//     const cardTitle = document.createElement("div");
+//     cardTitle.classList.add("card-title");
+//     cardTitle.textContent = partnerData[0];
+
+//     cardBody.appendChild(cardTitle);
+//     partnerCard.appendChild(cardBody);
+//     partnerColumn.appendChild(partnerCard);
+//     partnersGrid.appendChild(partnerColumn);
+//   }
+// }
+
 function generateGrid(partnerDictionary) {
   const partnersGrid = document.getElementById("partnersGrid");
   const partnerKeys = Object.keys(partnerDictionary);
@@ -203,7 +223,7 @@ function generateGrid(partnerDictionary) {
     const partnerData = partnerDictionary[partnerKey];
 
     const partnerColumn = document.createElement("div");
-    partnerColumn.classList.add("col-md-4", "mb-4");
+    partnerColumn.classList.add("col-md-6", "col-6"); // For medium screens, display 2 cards per row
 
     const partnerCard = document.createElement("div");
     partnerCard.classList.add("partner-card"); // Changed class name
@@ -232,3 +252,5 @@ function generateGrid(partnerDictionary) {
     partnersGrid.appendChild(partnerColumn);
   }
 }
+
+
