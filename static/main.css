@@ -407,7 +407,7 @@ table, th, td {
     padding: 5px;
     background-color: transparent; /* Set dropdown background color as transparent */
     pointer-events: none;
-    outline:white);
+    outline:white;
     border: none; /* Remove border */
   }
 
