@@ -174,46 +174,6 @@ function makeCard(partnerDictionary, indexes) {
 }
   
 
-// Function if i want to go back to grid!!
-// function generateGrid(partnerDictionary) {
-//   const partnersGrid = document.getElementById("partnersGrid");
-//   const partnerKeys = Object.keys(partnerDictionary);
-
-//   for (let i = 0; i < partnerKeys.length; i++) {
-//     const partnerKey = partnerKeys[i];
-//     const partnerData = partnerDictionary[partnerKey];
-
-//     const partnerColumn = document.createElement("div");
-//     partnerColumn.classList.add("col-md-4", "mb-4");
-
-//     const partnerCard = document.createElement("div");
-//     partnerCard.classList.add("partner-card"); // Changed class name
-
-//     const imageContainer = document.createElement("div");
-//     imageContainer.classList.add("partner-img-container"); // Added new container for circular cropping
-
-//     const imageElement = document.createElement("img");
-//     imageElement.src = partnerData[1]; // Set the image URL
-//     imageElement.alt = partnerData[0];
-//     imageElement.classList.add("partner-card-img-top"); // Changed class name
-
-//     imageContainer.appendChild(imageElement); // Add image inside the container
-//     partnerCard.appendChild(imageContainer); // Add container inside the card
-
-//     const cardBody = document.createElement("div");
-//     cardBody.classList.add("card-body");
-
-//     const cardTitle = document.createElement("div");
-//     cardTitle.classList.add("card-title");
-//     cardTitle.textContent = partnerData[0];
-
-//     cardBody.appendChild(cardTitle);
-//     partnerCard.appendChild(cardBody);
-//     partnerColumn.appendChild(partnerCard);
-//     partnersGrid.appendChild(partnerColumn);
-//   }
-// }
-
 function generateGrid(partnerDictionary) {
   const partnersGrid = document.getElementById("partnersGrid");
   const partnerKeys = Object.keys(partnerDictionary);
