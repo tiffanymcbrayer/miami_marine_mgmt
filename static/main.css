@@ -3,17 +3,17 @@
     --black: rgb(38, 38, 38); 
     --pink:  rgb(237, 141, 179);
     --blue: rgb(136, 194, 199);
-    --font: 'Jost', sans-serif;
+    --jost: 'Jost', sans-serif;
     /* --font: 'Rubik',sans-serif;
     --font: 'Roboto', sans-serif; */
-    /* --font: 'Helvetica', sans-serif; */
+    --font:'Helvetica', sans-serif;
 }
   
 .page {
     margin-top: 50;
-    margin-bottom: 100px;
+    margin-bottom: 0px;
     font-family: var(--font);
-    color: var(--blue); 
+    color: white; 
 }
 body {
     background-color: var(--black);
@@ -29,11 +29,11 @@ h2 {
     text-align: center;
 }
 a {
-    color: var(--blue);     
+    color: white;     
 }
 h1, h2, p {
     font-family: var(--font);
-    color: var(--blue);
+    color: white;
 }
 
 .center{
@@ -58,7 +58,7 @@ h1, h2, p {
 }
 
 .contact-page {
-    color: var(--blue);
+    color: white;
     font-family: var(--font);    
 }
 #contact-subheader {
@@ -74,21 +74,33 @@ h1, h2, p {
         padding-top: 90px; /* Add the desired padding for larger screens */
     }
 }
+@media (max-width: 767px) {
+    #contact-info {
+        padding: 30px 35px 30px 35px; 
+    }
+    #contact-subheader{
+        padding: 0px 35px 0px 35px; 
+    }
+    #contact-form{
+        padding: 0px 35px 0px 35px; 
+    }
+}
 
 #contactButton{
-    background-color: var(--blue); 
-    color: var(--black);
-    border: none;
+    background-color: var(--black); 
+    border: 2px solid white;
+    color: white;
+    /* border: none; */
 }
 
 .custom-hr {
-    border-color: var(--blue); /* Change to the desired color */
+    border-color:white; /* Change to the desired color */
     border-width: 1px; /* Optional: Set the border width, default is 1px */
 }
 
 /* SERVICES PAGE */
 #servicesContainer {
-    color: var(--blue);
+    color: white;
     font-family: var(--font);
     /* outline: 1.5px solid; */
     margin-top: 15px;
@@ -103,6 +115,22 @@ h1, h2, p {
     padding: 5px 5px 10px 5px;
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);  */
     
+}
+@media (max-width: 767px) {
+    #servicesContainer {
+        padding: 30px 35px 30px 35px; 
+    }
+    #partnersGrid {
+        padding: 40px 40px 40px 40px; 
+    }
+    #carousel{
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    #partnersGrid {
+        display: none;
+    }
 }
 .service-wrapper {
     position: relative;
@@ -142,21 +170,22 @@ h1, h2, p {
 
 
 #partners-container{
-    margin-top: 40px;
+    /* margin-top: 40px; */
+    margin-top: 30px;
     margin-bottom: 0px;
 }
 
 .partner-card {
     /* Customize partner card styles */
-    color: var(--blue);
+    color: white;
     font-family: var(--font);
     text-align: center;
     font-size: 14px;
 }
   
 .partner-img-container {
-    width: 150; 
-    height: 150; 
+    width: 125; 
+    height: 125; 
     overflow: hidden;
     border-radius: 50%; /* Crop the image in a circle */
     margin: 0 auto; /* Center the circular cropped image */
@@ -172,7 +201,7 @@ h1, h2, p {
   /* Optional: Add styles to the card body or other elements */
 .card-body {
     /* Customize card body styles */
-    color: var(--blue);
+    color: white;
     font-family: var(--font);
     text-align: center;
     font-size: 16px;
@@ -200,9 +229,18 @@ h1, h2, p {
 #about-us-blurb{
     padding-bottom: 10px;
     text-align: justify;
-    color: var(--blue);
+    color: white;
     font-size: 16px;
     font-family: var(--font);
+}
+@media (max-width: 767px) {
+    #about-us-blurb{
+        padding: 0 35px 0 35px; 
+        text-align: center;
+    }
+    #persons-larger-container, #instagram-media{
+        padding: 0 35px 0 35px; 
+    }
 }
 #persons-larger-container{
     padding-top: 10px;
@@ -259,59 +297,80 @@ h1, h2, p {
 
 
 
+/* Main navbar styles */
 .navbar {
     position: relative;
-    color: var(--black);
+    /* color: var(--black); */
     transition: all 0.3s ease-out;
     font-size: 25px;
-  }
-
-  /* scrolling state */
+}
+  
+  /* Scrolling state */
   .navbar.fixed-top {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: var(--black);
-    color: var(--pink);
+    /* color: var(--white); */
   }
-
-  .navbar.fixed-top a {
-    color: var(--pink);
-  }
-
-  .navbar-brand {
-    font-size: 30px;
-  }
-
-  .navbar .navbar-brand,
+  
+  /* Set the color of navbar links to white */
   .navbar .navbar-nav .nav-link {
-    color: var(--pink);
+    color: var(--white);
     font-family: var(--font);
   }
+  
  
-
+  #special-nav{
+    color: var(--pink);
+    font-family: var(--jost);
+    font-size: 30px;
+  }
+  
 
   /* Media query for devices with a minimum width of 992px (large screens) */
   @media (min-width: 992px) {
     .navbar {
-      color: var(--pink);
+      color: var(--white);
       padding: 10px 150px 0px 150px; /* Regular padding for larger screens */
     }
   }
-
+  
   /* Reset padding for devices with a maximum width of 767px (small devices) */
-  @media (max-width: 767px) {
+@media (max-width: 767px) {
     .navbar:not(.fixed-top) {
-      padding-left: 20px; /* No padding for smaller devices */
+      padding-left: 25px; /* No padding for smaller devices */
     }
-    .navbar-brand {
-      font-size: 25px; /* Adjust the font size for smaller devices */
+
+    #special-nav{
+        font-size: 25px;
     }
-  }
+    .nav-item{
+        font-size: 20px;
+    }
+}
+.custom-toggler.navbar-toggler {
+    border-color: var(--pink);
+    /* border-color: var(--black); */
+    color:var(--pink);
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(237, 141, 179, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+  
+  
   
 
 .layout-icons{
     font-size: 36px;
+    color: var(--pink);
+}
+#service-link{
+    color: rgb(237, 141, 179); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
 }
 
 
@@ -348,7 +407,7 @@ table, th, td {
     padding: 5px;
     background-color: transparent; /* Set dropdown background color as transparent */
     pointer-events: none;
-    outline:var(--blue);
+    outline:white);
     border: none; /* Remove border */
   }
 
@@ -377,14 +436,14 @@ li a {
 /* home options */
 #welcome-to{
     text-align: center;
-    color: var(--blue);
-    font-size: 65px;
+    color: white;
+    font-size: 62px;
     font-family: var(--font);
 }
 #maimi-marine-management{
     text-align: left;
     color: var(--pink);
-    font-size:65px;
+    font-size:62px;
     font-family: var(--font);
 }
 @media (max-width: 767px) {
@@ -400,12 +459,49 @@ li a {
     padding: 0 25px 0 25px; /* top right bottom left */
 
     text-align: justify;
-    color: var(--blue);
+    color: white;
     font-size: 20px;
     font-family: var(--font);
 }
 @media (max-width: 767px) {
     #front-blurb {
         font-size: 15px;
+        padding: 0 35px 0 35px; 
+        text-align: center;
     }
 }
+.home-page-button-icon{
+    padding-top: 5px;
+    font-size: 40px;
+    
+    color: var(--pink);
+    padding-right: 15px;
+    /* padding-left: 20px; */
+}
+.home-page-button-blurb{
+    font-family: var(--font);
+    color: white;
+    font-size: 28px;
+}
+
+.page-home-button{
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 30px 10px 30px;
+    /* Add transition for smooth effect */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove underline on anchor tag when hovered */
+.page-home-button:hover a {
+    /* text-decoration: none; */
+    /* text-decoration: double;
+    border: 4px solid white;
+    color: pink; */
+    
+    text-decoration:underline white;
+}
+
+
