@@ -77,6 +77,7 @@ h1, h2, p {
 @media (max-width: 767px) {
     #contact-info {
         padding: 30px 35px 30px 35px; 
+        font-size: 16px;
     }
     #contact-subheader{
         padding: 0px 35px 0px 35px; 
