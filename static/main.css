@@ -284,6 +284,7 @@ h1, h2, p {
 .instagram-icon {
     padding: 5px 0px 0px 5px;
     font-size: 20px; /* Change this value to adjust the size */
+    color: grey;
 }
 
 
