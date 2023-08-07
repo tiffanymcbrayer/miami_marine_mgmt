@@ -102,12 +102,13 @@ def home():
 
 @app.route('/services')
 def services():
-
-    return render_template('services.html', services=services_list, service_dic=service_dic, partners=partners)
+  return render_template('services_coming_soon.html')
+  #return render_template('services.html', services=services_list, service_dic=service_dic, partners=partners)
 
 @app.route('/about_us')
 def about_us():
-    return render_template('about_us.html', people=people)
+    return render_template('about_us_coming_soon.html')
+    #return render_template('about_us.html', people=people)
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
