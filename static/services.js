@@ -4,8 +4,8 @@ $(document).ready(function(){
   let serviceDictionary = JSON.parse(service_dic);
   let partnerDictionary = JSON.parse(partners);
   
-  generateCarousel(partnerDictionary);
-  generateGrid(partnerDictionary)
+  // generateCarousel(partnerDictionary);
+  // generateGrid(partnerDictionary)
 
   // Create service container to then add service items to
   const servicesContainer = document.getElementById("servicesContainer");
