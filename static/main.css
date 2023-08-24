@@ -89,6 +89,9 @@ h1, h2, p {
     font-family: var(--font);
     color: black;
 }
+p {
+    color: black !important; /* Set the text color to black */
+}
 li a {
     white-space: nowrap;
     text-align: center;
@@ -102,7 +105,9 @@ li a {
     text-align: center;
 }
 
-
+.phone-number {
+    color: #000;
+}
 .contact-page {
     color: black;
     font-family: var(--font);    
@@ -522,40 +527,44 @@ td {
   
 
 
-
-
-
-
-
-
-
-
 /* LANDING PAGE */
 .landing-page-background {
-    min-height: 100vh;
-    max-height: 100vh; 
-    overflow: hidden;
-    background-image: url("home_page.jpg");
-    
-    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url("home_page_crop.jpg");
+    background-size: 100% 100%; /* Stretch to cover the viewport */
     background-position: center;
+
+
 }
-#MMM-front-page{
-    text-align:center;
-    padding-top: 65px;
+#front-blurb {
+    /* calculating the padding of the top compared to height of screen */
+    --viewport-height: 100vh; 
+    --padding-factor: 0.47; 
+    padding-top: calc(var(--viewport-height) * var(--padding-factor));
+    display: flex;   
+    align-items: baseline;
+    margin-bottom: -10px;
+}
+.top-row-front{
+    padding-right: 5px;
+    color: white;
+    font-size: 25px;     
+}
+#MMM-front{
     color: var(--pink);
-    font-size: 64px;
+    font-size: 45px;
     font-family: var(--adam);
 }
 #front-blurb-paragraph{
-    text-align: justify;
     color: white;
-    font-size: 25px;
-
-    --viewport-height: 100vh; 
-    --padding-factor: 0.38; 
-    padding-top: calc(var(--viewport-height) * var(--padding-factor));
+    text-align: justify;
+    font-size: 25px;     
 }
+
 
 #pill-button-front-page-container{
     --viewport-height: 100vh; 
@@ -624,41 +633,51 @@ td {
 }
 
 /* Tablet-specific iPad Pro */
-@media (min-width: 900px) and (max-width: 1300px) {
-  
+@media (min-height: 1300px) {
+    .landing-page-background {
+        min-height: 100vh;
+        max-height: 100vh; 
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+    }
     .navbar{
         padding-left: 30px;
         padding-right: 30px;
     }
-    #MMM-front-page{
-        padding-top: 100px;
-        font-size: 90px;
-    }
-    #front-blurb-paragraph{
+    #front-blurb {
+        margin-bottom: -3px;
         --viewport-height: 100vh; 
-        --padding-factor: 0.33; 
-        padding-top: calc(var(--viewport-height) * var(--padding-factor));
-        font-size: 30px;
+        --padding-factor: 0.55; 
+        /* padding-top: calc(var(--viewport-height) * var(--padding-factor)); */
     }
-    .pill-button-front-page{
-        font-size: 30px;
-    }
+   
 
 }
 
 /* Tablet-specific styles */
 @media (min-width: 768px) and (max-width: 1020px) {
   
-   
-    #MMM-front-page{
-        font-size: 70px;
+    .landing-page-background {
+        min-height: 100vh;
+        max-height: 100vh; 
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
     }
-    #front-blurb-paragraph{
+    #front-blurb {
+        margin-bottom: -3px;
         --viewport-height: 100vh; 
-        --padding-factor: 0.32; 
+        --padding-factor: 0.5; 
         padding-top: calc(var(--viewport-height) * var(--padding-factor));
-        font-size: 22px;
     }
+    .top-row-front #front-blurb-paragraph{
+        font-size: 20px;     
+    }
+    #MMM-front{
+        font-size: 35px;
+    }
+
     .pill-button-front-page{
         font-size: 30px;
     }
@@ -669,14 +688,24 @@ td {
 
 /* Mobile-specific styles */
 @media (max-width: 767px) {
-    #MMM-front-page{
-        padding-top: 37px;
-        font-size: 40px;
-    }    
+    .landing-page-background {
+        min-height: 100vh;
+        max-height: 100vh; 
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+    }
+    #front-blurb {
+        margin-bottom: -5px;
+    }
+    .top-row-front{
+        font-size: 14px;     
+    }
+    #MMM-front{
+        font-size: 17px;
+    }
+
     #front-blurb-paragraph{
-        --viewport-height: 100vh; 
-        --padding-factor: 0.30; 
-        padding-top: calc(var(--viewport-height) * var(--padding-factor));
         font-size: 14px;
     }
     .pill-button-front-page{
@@ -690,24 +719,24 @@ td {
         max-width: 100%; /* Set maximum width to fit mobile screens */
         min-height: calc(33.33vh); 
     }
-    #pill-button-front-page-container{
-        /* padding-top:0px; */
-        --viewport-height: 100vh; 
-        --padding-factor: 0.005; 
-        padding-top:calc(var(--viewport-height) * var(--padding-factor));
-    }
 }
 /* Mobile specific for larger phones */
-@media (max-height: 900px) and (min-height: 800px) and (max-width: 500px){
-    #MMM-front-page{
-        padding-top: 65px;
-        font-size: 40px;
+@media (max-height: 900px) and (min-height: 725px) and (max-width: 500px){
+    .landing-page-background {
+        min-height: 100vh;
+        max-height: 100vh; 
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
     }
-    #front-blurb-paragraph{
-        --viewport-height: 100vh; 
-        --padding-factor: 0.35; 
-        padding-top: calc(var(--viewport-height) * var(--padding-factor));
-        /* padding-top: 280; */
+    /* #front-blurb {
+        margin-bottom: -3px;
+    }
+    .top-row-front #front-blurb-paragraph{
+        font-size: 20px;     
+    }
+    #MMM-front{
+        font-size: 23.5px;
     }
 
     .pill-button-front-page{
@@ -717,8 +746,10 @@ td {
         font-size: 20px;
     }
     #pill-button-front-page-container{
-        padding-top:10px;
-    }
+        --viewport-height: 100vh; 
+        --padding-factor: 0.05; 
+        padding-top:calc(var(--viewport-height) * var(--padding-factor));
+    } */
 }
 
 
