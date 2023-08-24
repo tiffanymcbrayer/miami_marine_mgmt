@@ -624,7 +624,7 @@ td {
 }
 
 /* Tablet-specific iPad Pro */
-@media (min-width: 900px) and (max-width: 2000px) {
+@media (min-width: 900px) and (max-width: 1300px) {
   
     .navbar{
         padding-left: 30px;
