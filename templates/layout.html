@@ -23,17 +23,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome: used for social media icons-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-
-
   
 
 
@@ -52,8 +43,12 @@
 
 <body>
   <main>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="/">MIAMI MARINE MGMT</a>
+    <!-- layout nav -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-light layout-nav">
+      <a class="navbar-brand" id="special-nav" href="/">
+        <img src="/static/flag.jpg" alt="https://www.vecteezy.com/free-vector/usa-flag-icon" id="flag-img">
+        MIAMI MARINE MGMT.
+      </a>
       <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -61,29 +56,35 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/services">services</a>
+            <a class="nav-link" href="/services">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about_us">about us</a>
+            <a class="nav-link" href="/about_us">About</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact">contact</a>
+          <li class="nav-item"> 
+            <a class="nav-link" href="/contact">Contact</a>
           </li>
+
+
         </ul>
       </div>
     </nav>
-    
+     -->
 
 
 
-    <div class='container'>
+    <!-- <div class='container'> -->
+    <div>
       {% block content %}
       {% endblock %}
     </div>
   </main>
 
   <footer>
-    <div class="container">        
+    <div class="container">       
+        <hr> 
+        <br>
+        
         <div class="container p-4">
           <!-- Section: Social media -->
           <section class="mb-1">
@@ -95,8 +96,13 @@
             <a href="https://www.facebook.com/p/Miami-Marine-Management-100088707751036/?paipv=0&eav=AfapcvU3zlG7Vy2yGVmaznINrYSLzIKyv8WNkmEoX1imhpXqCwCLTA5eC91dJlvozfE&_rdr" target="_blank">
               <i class="fab fa-facebook layout-icons"></i>
             </a>
+            <!-- Email -->
+            <a href="mailto:contactmiamimarine@gmail.com">
+              <i class="fas fa-envelope layout-icons"></i>
+            </a>
           </section>
         </div>
+        <br>
     </div>
   </footer>
 

@@ -54,60 +54,41 @@ service_dic = {
 
 
 
-# Name of the company : [what type of partner, "image url", "company url"]
-partners = {
-    "Glass-Tech": ["Yard", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/partner_images/glass-tech.png?raw=true", 
-                   "https://www.glass-tech.com/"],
-    "D-Dey": ["Safety", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/partner_images/D-DEY.png?raw=true", 
-              "https://d-dey.myshopify.com/"],
-    "All Water Customs": ["Decking", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/partner_images/All_water_customs.png?raw=true",
-                          "https://allwatercustoms.com/"],
-    "Miami Maritime Group": ["Broker", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/partner_images/Miami_Maritime_Group.png?raw=true", 
-                             "https://www.miamimaritimegroup.com/"],
-    "Locmarine ": ["Security", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/partner_images/locmarine.png?raw=true", 
-                   "https://www.locmarine.com/"],
-    "VooDoo Marine": ["Service", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/partner_images/Voodoo_marine.png?raw=true",
-                       "https://www.instagram.com/voodoomarine/?hl=en"],
-    "Elite Marine": ["Service", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/partner_images/Elite_Marine.png?raw=true", 
-                     "https://www.instagram.com/elitemarineservices/"],
-    "DC Fuel Services ": ["Fuel", "https://github.com/tiffanymcbrayer/miami_marine_mgmt/blob/main/partner_images/dc_fuel_services.png?raw=true", 
-                          "https://www.dcfuelsvc.com/"]
 
-}
 
 people = {
-    "David Costa": {"photo": "https://writingcenter.fas.harvard.edu/sites/hwpi.harvard.edu/files/styles/os_files_xxlarge/public/writingcenter/files/person-icon.png?m=1614398157&itok=Bvj8bd7F",
-                   "title": "Title", 
-                   "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                   "instagram": ""},
-    "Mark Lopez": {"photo": "https://writingcenter.fas.harvard.edu/sites/hwpi.harvard.edu/files/styles/os_files_xxlarge/public/writingcenter/files/person-icon.png?m=1614398157&itok=Bvj8bd7F",
-                   "title": "Title", 
-                  "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                   "instagram": ""},
-    "Person 3": {"photo": "https://writingcenter.fas.harvard.edu/sites/hwpi.harvard.edu/files/styles/os_files_xxlarge/public/writingcenter/files/person-icon.png?m=1614398157&itok=Bvj8bd7F",
-                   "title": "Title", 
-                  "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                   "instagram": ""},
-    "Person 4": {"photo": "https://writingcenter.fas.harvard.edu/sites/hwpi.harvard.edu/files/styles/os_files_xxlarge/public/writingcenter/files/person-icon.png?m=1614398157&itok=Bvj8bd7F",
-                   "title": "Title", 
-                   "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-                   "instagram": ""}
+    "david_costa": {"name":  "David Costa",
+                   "photo": "https://writingcenter.fas.harvard.edu/sites/hwpi.harvard.edu/files/styles/os_files_xxlarge/public/writingcenter/files/person-icon.png?m=1614398157&itok=Bvj8bd7F",
+                   "short_info":"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                   "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                   "instagram": "https://www.instagram.com/dcost22/"},
+    "mark_lopez": {"name":  "Mark Lopez",
+                  "photo": "https://writingcenter.fas.harvard.edu/sites/hwpi.harvard.edu/files/styles/os_files_xxlarge/public/writingcenter/files/person-icon.png?m=1614398157&itok=Bvj8bd7F",
+                  "short_info":"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                  "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                   "instagram": "https://www.instagram.com/markk_lopezzzz/"},
+    "christopher_tavera": {"name": "Christopher Tavera",
+                "photo": "https://writingcenter.fas.harvard.edu/sites/hwpi.harvard.edu/files/styles/os_files_xxlarge/public/writingcenter/files/person-icon.png?m=1614398157&itok=Bvj8bd7F",
+                  "short_info":"Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+                  "info": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                  "instagram": "https://www.instagram.com/miamiskindiver/"},
 }
 
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+  #return render_template('home.html')
+  return render_template('home-parallax.html')
+
 
 
 @app.route('/services')
 def services():
-
-    return render_template('services.html', services=services_list, service_dic=service_dic, partners=partners)
+  return render_template('services.html', services=services_list, service_dic=service_dic)
 
 @app.route('/about_us')
 def about_us():
-    return render_template('about_us.html', people=people)
+  return render_template('about_us.html', people=people)
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():

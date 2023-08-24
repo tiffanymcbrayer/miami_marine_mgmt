@@ -1,0 +1,166 @@
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="static/main.css">
+ 
+  <!-- Font Awesome: used for social media icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+ 
+
+  
+
+
+  <script type="module" src="static/layout.js"></script>
+
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    // document.addEventListener("DOMContentLoaded", function () {
+    //     const slides = document.querySelectorAll(".slides");
+    //     let currentSlide = 0;
+
+    //     function scrollToSlide(slideIndex) {
+    //         if (slideIndex >= 0 && slideIndex < slides.length) {
+    //             currentSlide = slideIndex;
+    //             window.scrollTo({
+    //                 top: slides[currentSlide].offsetTop,
+    //                 behavior: "smooth",
+    //             });
+    //         }
+    //     }
+
+    //     function scrollToNextSlide() {
+    //         scrollToSlide(currentSlide + 1);
+    //     }
+
+    //     function scrollToPreviousSlide() {
+    //         scrollToSlide(currentSlide - 1);
+    //     }
+
+    //     window.addEventListener("wheel", function (event) {
+    //         if (event.deltaY > 0) {
+    //             scrollToNextSlide();
+    //         } else {
+    //             scrollToPreviousSlide();
+    //         }
+    //     });
+    // });
+</script>
+<title>Miami Marine Management</title>
+</head>
+<body>
+  
+    
+
+    <div class='landing-page-background'>
+        <!-- Landing page  -->
+        <nav class="navbar navbar-layout navbar-expand-lg navbar-light landing-page-nav">
+            <a class="navbar-brand" id="special-nav-layout" href="/">
+                <img src="/static/flag.jpg" alt="https://www.vecteezy.com/free-vector/usa-flag-icon" id="flag-img">
+                MIAMI MARINE MGMT.
+            </a>
+            <button class="navbar-toggler custom-toggler navbar-toggler-layout custom-toggler-layout" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon navbar-toggler-icon-layout"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse show" id="navbarSupportedContent">
+              <ul class="navbar-nav navbar-nav-layout ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link nav-link-layout" href="/services">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-link-layout" href="/about_us">About</a>
+                </li>
+                <li class="nav-item"> 
+                  <a class="nav-link nav-link-layout" href="/contact">Contact</a>
+                </li>
+      
+      
+              </ul>
+            </div>
+        </nav>
+
+
+        <div class="container">
+            <div class="row">
+              <div class="col-1"></div>
+              <div class="col-10">
+                    <div id = "MMM-front-page">
+                        Miami Marine Management
+                    </div>
+                    <div class="row" id="front-blurb-paragraph">
+                        We stray away from the generic yacht management programs. We are avid boaters and
+                        owners who grew tired of the status quo. Our goal with Miami Marine Management is to tackle what the industry lacks: quality and accountability. Your journey with us starts with a bespoke approach designed for you and your vessel’s maintenance needs. For more info about our services, click below.
+                    </div>    
+                </div>
+            </div>
+            <div class="row" id="pill-button-front-page-container">
+                
+                <a href="/services" class="pill-button-front-page">
+                    Services
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class='slides services-landing-page-background'>
+        <a href="/services" class="pill-button">
+            Services
+        </a>
+    </div>
+    <div class='slides about-landing-page-background'>
+        <a href="/about_us" class="pill-button">
+            About Us
+        </a>
+    </div>
+    <div class='slides contact-landing-page-background'>
+        <a href="/contact" class="pill-button">
+            Contact Us
+        </a>
+    </div>
+
+</body>
+
+<footer>
+    <div class="container">        
+        <div class="container p-4">
+          <!-- Section: Social media -->
+          <section class="mb-1">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/miamimarinemgmt/" target="_blank">
+              <i class="fab fa-instagram layout-icons"></i>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/p/Miami-Marine-Management-100088707751036/?paipv=0&eav=AfapcvU3zlG7Vy2yGVmaznINrYSLzIKyv8WNkmEoX1imhpXqCwCLTA5eC91dJlvozfE&_rdr" target="_blank">
+              <i class="fab fa-facebook layout-icons"></i>
+            </a>
+            <!-- Email -->
+            <a href="mailto:contactmiamimarine@gmail.com">
+                <i class="fas fa-envelope layout-icons"></i>
+            </a>
+          </section>
+        </div>
+    </div>
+  </footer>
+
+</html>
