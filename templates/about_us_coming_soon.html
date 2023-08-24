@@ -5,26 +5,60 @@
 <title>About Us - Miami Marine Management</title>
 
 
-
+<script>
+    let people = '{{ people| tojson}}'
+</script>
 <script async src="//www.instagram.com/embed.js"></script>
+<script type="module" src="static/about_us.js"></script>
 
+
+<div id ="about-page">
+    <nav class="navbar navbar-expand-lg navbar-light layout-nav">
+      <a class="navbar-brand" id="special-nav" href="/">
+        <img src="/static/flag.jpg" alt="https://www.vecteezy.com/free-vector/usa-flag-icon" id="flag-img">
+        MIAMI MARINE MGMT.
+      </a>
+      <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about_us">About</a>
+          </li>
+          <li class="nav-item"> 
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+  
+  
+        </ul>
+      </div>
+    </nav>
+  
+    <div class="page-top">
+      <!-- spacer for the image to show -->
+    </div>
+</div>
 
 <div class="page">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <h1>About Us</h1>
+    <div class='container'>
+      <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+          
+  
+            <div class ="page-header">
+                About Us
+            </div>
             <div id="about-us-blurb">
                 Welcome to Miami Marine Management! As a leading marine services company in Miami, Florida, we take pride in delivering top-notch solutions to the boating and marine industry.
                 <p></p>
-                With years of experience and a dedicated team, customer satisfaction is our top priority. <a href="/contact"> <span style="text-decoration: underline;">Contact us</span></a> to learn more about our reliable and high-quality services. Thank you for choosing Miami Marine Management!
+                With years of experience and a dedicated team, customer satisfaction is our top priority. <a href="/contact"> <span style="text-decoration: underline; color: black;">Contact us</span></a> to learn more about our reliable and high-quality services. Thank you for choosing Miami Marine Management!
             </div>
-            
+
         </div>
     </div>
-
-    
-    
-</div>
-
-{% endblock %}
