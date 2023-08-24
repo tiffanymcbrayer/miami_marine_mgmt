@@ -23,8 +23,6 @@
     background-position: center;
     max-width: 100% auto; 
     background-image: url("services_page.jpg");
-    /* background-image: url("about_page.jpg"); */
-    /* background-image: url("contact_page.jpg"); */
 
 }
 #contact-page{
@@ -32,8 +30,14 @@
     background-size: cover;
     background-position: center;
     max-width: 100% auto; 
+    background-image: url("contact_page.jpg");
+}
+#about-page{
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    max-width: 100% auto; 
     background-image: url("about_page.jpg");
-
 }
 .page-top {
     margin-top: calc(30.0vh);
@@ -249,13 +253,12 @@ li a {
 #about-us-blurb{
     padding-bottom: 10px;
     text-align: justify;
-    color: white;
+    color: black;
     font-size: 16px;
     font-family: var(--font);
 }
 @media (max-width: 767px) {
     #about-us-blurb{
-        padding: 0 35px 0 35px; 
         text-align: center;
     }
     #persons-larger-container, #instagram-media{
@@ -267,12 +270,18 @@ li a {
     padding-bottom: 80px; 
 }
 .person-container {
-    background-color: white;
+    border: 1px solid black;
     border-radius: 15px;
+    
     padding: 20px 10px 20px 10px;
     margin-top: 15px;
-    margin-bottom: 0px;    
+    margin-bottom: 0px;  
+    
+    /* max-height: 370px;  */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
 }
+
 .person-image{
     /* max-width: 90%; */
     display: block;
@@ -285,25 +294,69 @@ li a {
     font-family: var(--font);
     font-size: 20px;
 }
-.person-title{
-    padding: 0px 10px 0px 10px;
-    color: grey;
-    font-family: var(--font);
-    font-size: 16px;
-}
-.person-info{
+.person-info-short{
     padding: 0px 10px 0px 10px;
     color: grey;
     font-family: var(--font);
     font-size: 14px;
 }
+.person-info{
+    display: none;
+    padding: 0px 10px 0px 10px;
+    color: grey;
+    font-family: var(--font);
+    font-size: 14px;
+}
+.read-more{
+    padding: 0px 10px 0px 10px;
+    color: grey;
+    font-family: var(--font);
+    font-size: 14px;
+    text-decoration: underline;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
 .person-instagram{
     padding: 10px 10px 5px 10px;
 }
 .instagram-icon {
     padding: 5px 0px 0px 5px;
     font-size: 20px; /* Change this value to adjust the size */
-    color: grey;
+    color: var(--blue);
+}
+.pill-button-call-to-action-container{
+    padding: 10px 0 20px 0;
+    justify-content:center;
+}
+.pill-button-call-to-action{
+    font-size:25px;
+    background-color: white;
+    border: none;
+    color: var(--blue);
+    border: 2px solid var(--blue);;
+    padding: 10px 35px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.pill-button-call-to-action:hover {
+    color: var(--blue);
+    text-decoration: none; /* Remove the underline on hover */
+    text-shadow: 2px 2px 4px rgba(59, 58, 58, 0.3); /* Add text shadow on hover */
+}
+/* Tablet-specific styles */
+@media (min-width: 768px) and (max-width: 991px) {
+    .pill-button-call-to-action{
+        font-size: 30px;
+    }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+    .pill-button-call-to-action{
+        font-size: 18px;
+    }
 }
 
 
@@ -487,34 +540,23 @@ td {
     background-size: cover;
     background-position: center;
 }
-#front-blurb {
-    /* calculating the padding of the top compared to height of screen */
-    --viewport-height: 100vh; 
-    --padding-factor: 0.45; 
-    padding-top: calc(var(--viewport-height) * var(--padding-factor));
-    display: flex;   
-    align-items: baseline;
-    margin-bottom: -10px;
-}
-.top-row-front{
-    padding-right: 5px;
-    color: white;
-    font-size: 25px;    
-}
-#MMM-front{
+#MMM-front-page{
+    text-align:center;
+    padding-top: 65px;
     color: var(--pink);
-    font-size: 45px;
+    font-size: 64px;
     font-family: var(--adam);
 }
 #front-blurb-paragraph{
     text-align: justify;
     color: white;
     font-size: 25px;
+
+    --viewport-height: 100vh; 
+    --padding-factor: 0.38; 
+    padding-top: calc(var(--viewport-height) * var(--padding-factor));
 }
-#front-blurb-paragraph{
-    color: white;
-    text-align: justify;
-}
+
 #pill-button-front-page-container{
     --viewport-height: 100vh; 
     --padding-factor: 0.03; 
@@ -581,19 +623,42 @@ td {
     text-shadow: 2px 2px 4px rgba(59, 58, 58, 0.3); /* Add text shadow on hover */
 }
 
+/* Tablet-specific iPad Pro */
+@media (min-width: 900px) and (max-width: 2000px) {
+  
+    .navbar{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    #MMM-front-page{
+        padding-top: 100px;
+        font-size: 90px;
+    }
+    #front-blurb-paragraph{
+        --viewport-height: 100vh; 
+        --padding-factor: 0.33; 
+        padding-top: calc(var(--viewport-height) * var(--padding-factor));
+        font-size: 30px;
+    }
+    .pill-button-front-page{
+        font-size: 30px;
+    }
+
+}
+
 /* Tablet-specific styles */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1020px) {
   
-    #front-blurb {
-        margin-bottom: -3px;
+   
+    #MMM-front-page{
+        font-size: 70px;
     }
-    .top-row-front #front-blurb-paragraph{
-        font-size: 20px;     
+    #front-blurb-paragraph{
+        --viewport-height: 100vh; 
+        --padding-factor: 0.32; 
+        padding-top: calc(var(--viewport-height) * var(--padding-factor));
+        font-size: 22px;
     }
-    #MMM-front{
-        font-size: 35px;
-    }
-  
     .pill-button-front-page{
         font-size: 30px;
     }
@@ -604,19 +669,14 @@ td {
 
 /* Mobile-specific styles */
 @media (max-width: 767px) {
-   
-
-    #front-blurb {
-        margin-bottom: -5px;
-    }
-    .top-row-front{
-        font-size: 14px;     
-    }
-    #MMM-front{
-        font-size: 17px;
-    }
-    
+    #MMM-front-page{
+        padding-top: 37px;
+        font-size: 40px;
+    }    
     #front-blurb-paragraph{
+        --viewport-height: 100vh; 
+        --padding-factor: 0.30; 
+        padding-top: calc(var(--viewport-height) * var(--padding-factor));
         font-size: 14px;
     }
     .pill-button-front-page{
@@ -630,19 +690,26 @@ td {
         max-width: 100%; /* Set maximum width to fit mobile screens */
         min-height: calc(33.33vh); 
     }
+    #pill-button-front-page-container{
+        /* padding-top:0px; */
+        --viewport-height: 100vh; 
+        --padding-factor: 0.005; 
+        padding-top:calc(var(--viewport-height) * var(--padding-factor));
+    }
 }
 /* Mobile specific for larger phones */
-@media (min-width: 400px) and (max-width: 500px) {
-    #front-blurb {
-        margin-bottom: -3px;
+@media (max-height: 900px) and (min-height: 800px) and (max-width: 500px){
+    #MMM-front-page{
+        padding-top: 65px;
+        font-size: 40px;
     }
-    .top-row-front #front-blurb-paragraph{
-        font-size: 20px;     
+    #front-blurb-paragraph{
+        --viewport-height: 100vh; 
+        --padding-factor: 0.35; 
+        padding-top: calc(var(--viewport-height) * var(--padding-factor));
+        /* padding-top: 280; */
     }
-    #MMM-front{
-        font-size: 23.5px;
-    }
-  
+
     .pill-button-front-page{
         font-size: 20px;
     }
@@ -650,9 +717,7 @@ td {
         font-size: 20px;
     }
     #pill-button-front-page-container{
-        --viewport-height: 100vh; 
-        --padding-factor: 0.05; 
-        padding-top:calc(var(--viewport-height) * var(--padding-factor));
+        padding-top:10px;
     }
 }
 
@@ -662,12 +727,14 @@ td {
 footer {
     margin-top: auto;
     text-align: center;
-    padding:10px 0 10px 0;
+    padding:45px 0 25px 0;
     font-family: var(--font);
+
 }
 /* Icons in the footer */
 .layout-icons{
     font-size: 36px;
     color: var(--pink);
-    margin: 0 5px 0 5px;
+    color:var(--blue);
+    margin: 0 10px 0 10px;
 }
