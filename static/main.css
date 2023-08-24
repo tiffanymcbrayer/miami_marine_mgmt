@@ -392,7 +392,8 @@ li a {
     font-family: var(--font);
 }
 .navbar-layout .navbar-nav-layout .nav-link-layout{
-    color: var(--pink);
+    /* color: var(--pink); */
+    color: white;
     font-size: 25px; 
     font-family: var(--font);
 }
@@ -402,7 +403,8 @@ li a {
     text-shadow: 2px 2px 10px rgba(243, 212, 223, 0.9);
 }
 .navbar-layout .navbar-nav-layout .nav-link-layout:hover{
-    color: var(--pink); 
+    /* color: var(--pink);  */
+    color: white;
     text-decoration: none; 
     text-shadow: 2px 2px 10px rgba(255, 137, 180, 0.9);
 }
@@ -413,7 +415,8 @@ li a {
     font-family: var(--adam);
 }
 #special-nav-layout{
-    color: var(--pink);
+    /* color: var(--pink); */
+    color: white;
     font-size: 30px;
     font-family: var(--adam);
 }
@@ -460,8 +463,10 @@ li a {
     color:white;
 }
 .custom-toggler-layout.navbar-toggler-layout {
-    border-color: var(--pink);
-    color:var(--pink);
+    /* border-color: var(--pink);
+    color:var(--pink); */
+    border-color: white;
+    color:white;
 }
 .custom-toggler .navbar-toggler-icon {
     background-image: url(
@@ -469,7 +474,7 @@ li a {
 }
 .custom-toggler-layout .navbar-toggler-icon-layout {
     background-image: url(
-"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 137, 180, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
   
   
@@ -533,7 +538,6 @@ td {
     left: 0;
     width: 100%;
     height: 100%;
-    /* z-index: -1; */
     background-image: url("home_page_crop.jpg");
     background-size: 100% 100%; /* Stretch to cover the viewport */
     background-position: center;
@@ -660,13 +664,14 @@ td {
         min-height: 100vh;
         max-height: 100vh; 
         overflow: hidden;
+        background-image: url("home_page_crop_more.jpg");
         background-size: cover;
         background-position: center;
     }
     #front-blurb {
         margin-bottom: -3px;
         --viewport-height: 100vh; 
-        --padding-factor: 0.5; 
+        --padding-factor: 0.45; 
         padding-top: calc(var(--viewport-height) * var(--padding-factor));
     }
     .top-row-front #front-blurb-paragraph{
@@ -689,6 +694,7 @@ td {
     .landing-page-background {
         min-height: 100vh;
         max-height: 100vh; 
+        background-image: url("home_page_crop_more.jpg");
         overflow: hidden;
         background-size: cover;
         background-position: center;
@@ -723,6 +729,7 @@ td {
     .landing-page-background {
         min-height: 100vh;
         max-height: 100vh; 
+        background-image: url("home_page_crop_more.jpg");
         overflow: hidden;
         background-size: cover;
         background-position: center;
