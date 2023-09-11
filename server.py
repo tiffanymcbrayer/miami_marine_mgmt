@@ -16,37 +16,27 @@ app = Flask(__name__)
 
 
 services_list = ["Boat Cleaning & Detailing",
-  "Gel-coat restoration",
-  "Interior cleaning and upholstery care",
-  "Teak cleaning and restoration",
-  "Bottom painting",
-  "Engine maintenance and servicing"]
+  "Corrosion Detail & Treatment",
+  "Captain Services",
+  "Ceramic Coating for Glass and Engines",
+  "Service and Repairs"]
 
 
 service_dic = {
   "Boat Cleaning & Detailing": [
-    "Our professional boat cleaning and detailing services ensure that your boat looks its best at all times. From hull to deck, we pay attention to every detail to provide a thorough and comprehensive cleaning. Expect your boat to shine like new after our services.",
-    "boat_cleaning.jpg"
+    "Our professional boat cleaning and detailing services ensure that your boat looks its best at all times. From hull to deck, we pay attention to every detail to provide a thorough and comprehensive cleaning. Expect your boat to shine like new after our services."
+    ],
+  "Corrosion Detail & Treatment": [
+    "An in-depth and thorough removal of any existing corrosion in your bilge, motors, and electronics. Followed by a chemical treatment to reduce additional corrosion in these areas. Your bilge, engines, and electronics will look cleaner than ever while having a layer of protection against humidity and saltwater."
   ],
-  "Gel-coat restoration": [
-    "Our gel-coat restoration service brings back the original shine and luster of your boat's gel-coat. We use top-quality products and techniques to repair and revive the surface, leaving it looking brand new. Expect a smooth and glossy gel-coat after our restoration process.",
-    "gel_coat_restoration.jpg"
+  "Captain Services": [
+    "Boat transport to and from service centers by USCG licensed captains. Only available for service centers within Miami-Dade. You can trust that our captains will safely deliver your boat, so you don't have to take time out of your schedule to do so."
   ],
-  "Interior cleaning and upholstery care": [
-    "Our interior cleaning and upholstery care services ensure that the inside of your boat remains clean and comfortable. We pay attention to every corner and surface, providing a deep and thorough cleaning. Expect a fresh and welcoming interior after our service.",
-    "interior_cleaning.jpg"
+  "Ceramic Coating for Glass and Engines": [
+    "Ceramic coating is a great way to protect and properly seal your motors or glass windows. With that being said, the ceramic coating makes it easier to clean, such as fish blood, heavy stains, or even dirt. It is a once a year job and is a great way to keep your motors shining all year long."
   ],
-  "Teak cleaning and restoration": [
-    "Our specialized teak cleaning and restoration services keep your boat's teak surfaces in top condition. We use gentle yet effective cleaning methods to remove dirt and stains, and our restoration techniques breathe new life into weathered teak. Expect beautiful and well-maintained teak after our service.",
-    "teak_restoration.jpg"
-  ],
-  "Bottom painting": [
-    "Our expert bottom painting services protect your boat's hull from the elements and marine growth. We use high-quality marine-grade paints to ensure long-lasting and effective protection. Expect a smooth and protected hull after our bottom painting service.",
-    "bottom_painting.jpg"
-  ],
-  "Engine maintenance and servicing": [
-    "Our comprehensive engine maintenance and servicing keep your boat's engine running smoothly and efficiently. We perform routine checks, tune-ups, and repairs to ensure optimal performance. Expect a reliable and well-maintained engine after our servicing.",
-    "engine_maintenance.jpg"
+  "Service and Repairs": [
+    ""
   ]
 }
 
@@ -84,7 +74,7 @@ def home():
 
 @app.route('/services')
 def services():
-  return render_template('services.html', services=services_list, service_dic=service_dic)
+  return render_template('services.html',services=services_list, service_dic=service_dic)
 
 @app.route('/about_us')
 def about_us():
@@ -123,7 +113,8 @@ def contact():
 
     else:
         # This is a GET request, render the contact.html page with the services_list
-        return render_template('contact.html', services=services_list)
+        services_list_other = services_list + ["Other"]
+        return render_template('contact.html', services=services_list_other)
 
 
 
